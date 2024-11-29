@@ -1,0 +1,68 @@
+<div class="shopping-list">
+  <header>
+    <h1>Mis Compras</h1>
+  </header>
+
+  <section class="budget-section">
+    <h2 class="section-title">Presupuesto Disponible</h2>
+    <div class="budget-input">
+      <input type="number" id="budget" [(ngModel)]="budget" (input)="checkBudgetExceeded()" placeholder="Establece tu presupuesto">
+    </div>
+  </section>
+
+  <section class="category-filter">
+    <label for="category" class="category-label">Filtrar Productos:</label>
+    <select id="category" [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </section>
+
+  <section class="product-section">
+    <h2 class="section-title">Productos en la Lista</h2>
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <header class="product-header">
+          <h3>{{ product.nameProduct }}</h3>
+        </header>
+        <div class="product-body">
+          <p>{{ product.description }}</p>
+          <p><strong>Precio:</strong> {{ product.price | currency }}</p>
+        </div>
+        <footer class="product-footer">
+          <input type="checkbox" [checked]="isCompleted(product.nameProduct)" (change)="toggleComplete(product.nameProduct)">
+          <button class="remove-button" (click)="removeProduct(product.nameProduct)">🗑️ Eliminar</button>
+        </footer>
+      </div>
+    </div>
+  </section>
+
+  <section class="total-section">
+    <h3>Total: {{ total | currency }}</h3>
+    <div *ngIf="budgetExceeded" class="budget-alert">
+      <p class="alert-message">¡Presupuesto excedido!</p>
+    </div>
+  </section>
+
+  <section class="action-buttons">
+    <button class="add-product" (click)="addProduct()">Añadir Producto</button>
+    <button class="checkout-button" (click)="saveListToHistory()">Realizar Pago</button>
+  </section>
+
+  <section class="purchase-history">
+    <h3>Total acumulado: {{ totalHistory | currency }}</h3>
+    <div class="history-list" *ngIf="listHistory.length > 0">
+      <h2>Historial de Compras</h2>
+      <div *ngFor="let list of listHistory; let i = index">
+        <h3>Lista del {{ list.date | date:'short' }}</h3>
+        <ul>
+          <li *ngFor="let product of list.products">
+            {{ product.nameProduct }} - {{ product.price | currency }}
+          </li>
+        </ul>
+        <p>Total: {{ list.total | currency }}</p>
+        <button (click)="loadListFromHistory(list)">Cargar Lista</button>
+        <button class="delete-button" (click)="removeListFromHistory(i)">Eliminar Lista</button>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,43 @@
+<div class="carrito-container">
+    <h1 class="title">Resumen del Carrito</h1>
+  
+    <div class="products-summary">
+      <h2>Productos en tu carrito:</h2>
+      <div class="product-cards">
+        <div class="product-card" *ngFor="let product of products">
+          <div class="product-info">
+            <p class="product-name">{{ product.nameProduct }}</p>
+            <p class="product-price">{{ product.price | currency }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="total-summary">
+      <p class="total-amount">Total a pagar: <strong>{{ total | currency }}</strong></p>
+      <p class="estimated-time">Hora de llegada estimada: {{ estimatedArrival | date: 'shortTime' }}</p>
+    </div>
+  
+    <div class="payment-section">
+      <h3>Formulario de Pago</h3>
+      <form (ngSubmit)="processPayment()" class="payment-form">
+        <div class="form-group">
+          <label for="cardNumber">Número de tarjeta:</label>
+          <input id="cardNumber" type="text" [(ngModel)]="paymentData.cardNumber" name="cardNumber" required class="form-control" />
+        </div>
+  
+        <div class="form-group">
+          <label for="expirationDate">Nombre del titular de la tarjeta:</label>
+          <input id="expirationDate" type="text" [(ngModel)]="paymentData.expirationDate" name="expirationDate" required class="form-control" />
+        </div>
+  
+        <div class="form-group">
+          <label for="cvv">CVV:</label>
+          <input id="cvv" type="text" [(ngModel)]="paymentData.cvv" name="cvv" required class="form-control" />
+        </div>
+  
+        <button type="submit" class="submit-button">Pagar</button>
+      </form>
+    </div>
+  </div>
+  

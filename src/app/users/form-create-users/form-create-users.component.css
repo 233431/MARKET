@@ -1,0 +1,94 @@
+/* Estilos para el contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+
+
+form {
+  background-color: #1f1f1f; /* Fondo gris oscuro */
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efecto */
+  color: #e6e6e6; /* Texto gris claro */
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #9a9a9a; /* Gris claro */
+  margin-bottom: 5px;
+  position: relative;
+  right: 10px;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333333; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco */
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s, transform 0.3s;
+  position: relative;
+  right: 10px;
+}
+
+form input:focus {
+  background-color: #444444; /* Fondo más claro en foco */
+  outline: none;
+  transform: scale(1.03); /* Aumenta un poco el tamaño en foco */
+}
+
+.center-button {
+  width: 422px;
+  padding: 12px;
+  background-color: #f44336; /* Rojo suave */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  position: relative;
+  right: 10px;
+}
+
+.center-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro en hover */
+  transform: scale(1.05); /* Ligera expansión en hover */
+}
+
+.center-button:disabled {
+  background-color: #666666; /* Gris para botón deshabilitado */
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+form p {
+  text-align: center;
+  color: #b0b0b0;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+form a {
+  color: #f44336; /* Color de enlace */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+form a:hover {
+  color: #d32f2f; /* Enlace más oscuro en hover */
+}

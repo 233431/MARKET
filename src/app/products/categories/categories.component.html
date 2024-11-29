@@ -1,0 +1,28 @@
+<div class="categories-container">
+    <h2>Gestión de Categorías</h2>
+  
+  
+    <div class="add-category">
+      <input type="text" [(ngModel)]="newCategoryName" placeholder="Nueva categoría">
+      <button (click)="addCategory()">Agregar</button>
+    </div>
+  
+    <ul>
+      <li *ngFor="let category of categories">
+        <!-- Modo de edición de categoría -->
+        <div *ngIf="editingCategory && editingCategory.id === category.id">
+          <input type="text" [(ngModel)]="editingCategory.name">
+          <button (click)="saveEditCategory()">Guardar</button>
+          <button (click)="cancelEdit()">Cancelar</button>
+        </div>
+  
+        <!-- Vista normal de categoría -->
+        <div *ngIf="!editingCategory || editingCategory.id !== category.id">
+          <span>{{ category.name }}</span>
+          <button (click)="editCategory(category)">✏️</button>
+          <button (click)="deleteCategory(category.id)">🗑️</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

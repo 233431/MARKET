@@ -1,0 +1,205 @@
+/* Contenedor principal de la lista de compras */
+.shopping-list {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+/* Sección de presupuesto */
+.budget-section {
+  margin-bottom: 20px;
+}
+
+.budget-section .section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #495057;
+}
+
+.budget-input input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Filtro por categoría */
+.category-filter {
+  margin-bottom: 20px;
+}
+
+.category-label {
+  font-size: 1rem;
+  color: #495057;
+  margin-right: 10px;
+}
+
+.category-filter select {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* Sección de productos */
+.product-section {
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-body {
+  padding: 15px;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.product-footer {
+  padding: 10px;
+  text-align: center;
+  background-color: #f1f3f5;
+}
+
+.product-footer input {
+  margin-right: 10px;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+/* Total de la compra */
+.total-section {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #495057;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.budget-alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-product, .checkout-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-product:hover, .checkout-button:hover {
+  background-color: #218838;
+}
+
+/* Historial de compras */
+.purchase-history {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-history h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #495057;
+}
+
+.history-list {
+  margin-top: 20px;
+}
+
+.history-list h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #495057;
+}
+
+.history-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.history-list li {
+  font-size: 1rem;
+  color: #495057;
+}
+
+.history-list button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.history-list button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}

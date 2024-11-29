@@ -1,0 +1,33 @@
+<form [formGroup]="formProduct" (ngSubmit)="onAddProduct()" class="product-form">
+    <div class="form-header">
+      <h2>Agregar Producto</h2>
+      <p>Por favor ingrese los detalles del nuevo producto.</p>
+    </div>
+  
+    <div class="form-field">
+      <label for="nombre">Nombre del Producto:</label>
+      <input id="nombre" formControlName="nameProduct" type="text" placeholder="Ej. Aceite de Oliva">
+    </div>
+  
+    <div class="form-field">
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" formControlName="description" placeholder="Una breve descripción del producto"></textarea>
+    </div>
+  
+    <div class="form-field">
+      <label for="precio">Precio:</label>
+      <input id="precio" formControlName="price" type="number" placeholder="Precio en $">
+    </div>
+  
+    <div class="form-field">
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" formControlName="category">
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+  
+    <div class="form-submit">
+      <button type="submit" [disabled]="!formProduct.valid">Agregar Producto</button>
+    </div>
+  </form>
+  
